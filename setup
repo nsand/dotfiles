@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+declare OS
+
+if [ `uname -s` == "Darwin" ]; then
+	OS='darwin'
+else
+	OS='linux'
+fi
+
+if [ $OS == "darwin" ]; then
+	source .osx
+fi
