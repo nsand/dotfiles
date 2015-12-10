@@ -159,6 +159,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+shift+x exec i3lock --color "$bg-color"
+
 # exec rofi -key-run F12
 
 exec rofi -i -width 100 -padding 300 -eh 2 -bw 0 -lines 3 -font "System San Francisco Display 14" -opacity 95 -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "$indicator-color" -p "run:" -key-run F12
@@ -168,7 +170,7 @@ exec rofi -i -width 100 -padding 300 -eh 2 -bw 0 -lines 3 -font "System San Fran
 # exec rofi -key-window F11
 
 exec --no-startup-id feh --bg-scale ~/Images/gunnar.png
-exec_always compton
+exec_always compton -f
 
 exec_always xrandr --output Virtual3 --off --output Virtual2 --off --output Virtual1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output Virtual7 --off --output Virtual6 --off --output Virtual5 --off --output Virtual4 --off --output Virtual8 --off
 
