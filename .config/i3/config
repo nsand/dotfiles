@@ -11,9 +11,19 @@
 
 set $mod Mod1
 
+
+set $border-color	#5d707a
+set $bg-color		#333d39
+set $inactive-bg-color		#333d39
+set $text-color			#bcb4a8
+set $inactive-text-color	#676e7d
+set $urgent-color		#e539d5
+set $indicator-color		#875f5a
+set $separator-color		#757575
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:System San Francisco Display 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -40,7 +50,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -p "run:"'
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -width 100 -padding 300 -eh 2 -bw 0 -lines 3 -font "System San Francisco Display 14" -opacity 95 -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "$indicator-color" -p "run:"'
 
 # change focus
 bindsym $mod+j focus left
@@ -149,16 +159,33 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec rofi -key-run F12
-exec rofi -key-window F11
+# exec rofi -key-run F12
+
+exec rofi -i -width 100 -padding 300 -eh 2 -bw 0 -lines 3 -font "System San Francisco Display 14" -opacity 95 -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "$indicator-color" -p "run:" -key-run F12
+
+
+exec rofi -i -width 100 -padding 300 -eh 2 -bw 0 -lines 3 -font "System San Francisco Display 14" -opacity 95 -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "$indicator-color" -p "run:" -key-window F11
+# exec rofi -key-window F11
 
 exec --no-startup-id feh --bg-scale ~/Images/gunnar.png
+exec_always compton
 
-client.focused	#5d707a #333d39 #bcb4a8 #ff0000
+exec_always xrandr --output Virtual3 --off --output Virtual2 --off --output Virtual1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output Virtual7 --off --output Virtual6 --off --output Virtual5 --off --output Virtual4 --off --output Virtual8 --off
+
+client.focused	$border-color	$bg-color	$text-color	$indicator-color
+client.urgent	$urgent-color	$urgent-color	$text-color	$indicator-color
+
+hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
         tray_output primary
+	colors {
+		background $bg-color	$bg-color	$text-color
+		separator $separator-color
+		focused_workspace	$bg-color	$bg-color	$text-color
+		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$text-color
+	}
 }
