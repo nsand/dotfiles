@@ -192,5 +192,6 @@ bar {
 		separator $separator-color
 		focused_workspace	$bg-color	$bg-color	$text-color
 		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$text-color
+		urgent_workspace	$urgent-color	$urgent-color	$text-color
 	}
 }
