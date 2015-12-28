@@ -166,6 +166,10 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
+# Workspace assignments
+assign [class="chromium"] →  $workspace2
+assign [class="Atom"] →  $workspace3
+
 # exec rofi -key-run F12
 
 exec rofi -i -width 100 -padding 300 -eh 2 -bw 0 -lines 3 -font "System San Francisco Display 14" -opacity 95 -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "$indicator-color" -p "run:" -key-run F12
