@@ -14,11 +14,13 @@ set $mod Mod1
 
 set $border-color		#5d707a
 set $bg-color		#282828
-set $focus-bg-color	#86c1b9
+# set $focus-bg-color	#86c1b9
+set $focus-bg-color	#d1ced2
 set $inactive-bg-color		#282828
 set $text-color		#bcb4a8
 set $inactive-text-color	#90908a
-set $urgent-color		#f7ca88
+# set $urgent-color		#f7ca88
+set $urgent-color		#9eb1c9
 set $indicator-color		#282828
 set $separator-color		#757575
 set $border-width	5
