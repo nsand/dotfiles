@@ -13,15 +13,17 @@ set $mod Mod1
 
 
 set $border-color		#5d707a
-set $bg-color		#282828
+# set $bg-color		#282828
+set $bg-color		#1b221d
 # set $focus-bg-color	#86c1b9
-set $focus-bg-color	#d1ced2
+set $focus-bg-color	#d8c9c6
 set $inactive-bg-color		#282828
 set $text-color		#bcb4a8
 set $inactive-text-color	#90908a
 # set $urgent-color		#f7ca88
 set $urgent-color		#9eb1c9
-set $indicator-color		#282828
+# set $indicator-color		#282828
+set $indicator-color		#e7dbd6
 set $separator-color		#757575
 set $border-width	5
 
@@ -187,7 +189,7 @@ exec_always compton -f
 exec_always xrandr --output Virtual3 --off --output Virtual2 --off --output Virtual1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output Virtual7 --off --output Virtual6 --off --output Virtual5 --off --output Virtual4 --off --output Virtual8 --off
 
 client.unfocused	$bg-color	$bg-color	$text-color	$bg-color
-client.focused	$bg-color	$focus-bg-color	$text-color	$indicator-color
+client.focused	$bg-color	$focus-bg-color	$text-color	$focus-bg-color
 client.focused_inactive $bg-color	$bg-color	$text-color	$bg-color
 client.urgent	$urgent-color	$urgent-color	$text-color	$urgent-color
 
