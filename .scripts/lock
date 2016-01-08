@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+IMG=/tmp/lock.png
+scrot $IMG
+
+# Blur out the screenshot
+convert $IMG -blur 0x3 $IMG
+
+i3lock -i $IMG
+
+rm $IMG
