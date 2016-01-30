@@ -1,0 +1,21 @@
+[user]
+	email = nick.sandonato@gmail.com
+	name = Nick Sandonato
+[color]
+	diff = true
+	ui = true
+[core]
+	autocrlf = false
+[branch]
+	autosetuprebase = always
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[alias]
+	pp = "!f(){ git pull && git fetch origin --prune; };f"
+	co = checkout
