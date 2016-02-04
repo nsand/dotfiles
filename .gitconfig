@@ -19,3 +19,5 @@
 [alias]
 	pp = "!f(){ git pull && git fetch origin --prune; };f"
 	co = checkout
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	publish = "!git push -u origin $(git branch-name)"
