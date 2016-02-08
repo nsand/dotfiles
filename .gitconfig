@@ -21,3 +21,4 @@
 	co = checkout
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 	publish = "!git push -u origin $(git branch-name)"
+	ri = "!f(){ git rebase -i HEAD~${1}; };f"
