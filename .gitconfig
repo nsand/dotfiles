@@ -22,4 +22,4 @@
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 	publish = "!git push -u origin $(git branch-name)"
 	ri = "!f(){ git rebase -i HEAD~${1}; };f"
-	me = "!git log --author='nick.sandonato' --oneline --graph"
+	me = "!git log --author='nick.sandonato' --graph --format='<%Cred%h%Creset> [%ad] %s'"	
