@@ -23,3 +23,4 @@
 	publish = "!git push -u origin $(git branch-name)"
 	ri = "!f(){ git rebase -i HEAD~${1}; };f"
 	me = "!git log --author='nick.sandonato' --graph --format='<%Cred%h%Creset> [%ad] %s'"	
+	rebase-branch = "!f(){ git rebase -i `git merge-base ${1} HEAD`; };f"
