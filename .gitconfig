@@ -17,6 +17,7 @@
 	smudge = git-lfs smudge %f
 	required = true
 [alias]
+	a = add
 	pp = "!f(){ git pull && git fetch origin --prune; };f"
 	co = checkout
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
