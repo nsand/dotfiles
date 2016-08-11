@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 # Check for any files that don't end with certain extensions
-unzip -Z1 "$1" | grep -v -e '\.lua$' -e '\.xml$' -e '\/$'
+unzip -Z1 "$1" | grep -v -e '\.toc$' -e '\.ttf$' -e '\.blp$' -e '\.ogg$' -e '\.lua$' -e '\.xml$' -e '\/$'
